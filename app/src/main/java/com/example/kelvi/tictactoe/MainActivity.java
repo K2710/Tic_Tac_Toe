@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //This checks from left to right
         for (int rows = 0; rows < 3; rows++) {
             if (field[rows][0].equals(field[rows][1])
                     && field[rows][0].equals(field[rows][2])
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //This checks from top to bottom
         for (int rows = 0; rows < 3; rows++) {
             if (field[0][rows].equals(field[1][rows])
                     && field[0][rows].equals(field[2][rows])
@@ -100,12 +102,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //This checks diagonally
         if (field[0][0].equals(field[1][1])
                 && field[0][0].equals(field[2][2])
                 && !field[0][0].equals("")) {
             return true;
         }
 
+        //This checks diagonally
         if (field[0][2].equals(field[1][1])
                 && field[0][2].equals(field[2][0])
                 && !field[0][2].equals("")) {
@@ -157,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
 
+    //This method is implemented to save and restore data temporarily
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
